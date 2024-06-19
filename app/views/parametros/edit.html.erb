@@ -1,0 +1,26 @@
+<h1><%= action_name == 'new' ? 'Nuevo' : 'Editar' %> Parámetro</h1>
+<%= form_with(model: @parametro, local: true) do |form| %>
+  <% if @parametro.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@parametro.errors.count, 'error') %> prohibieron que se guardara el parámetro:</h2>
+      <ul>
+        <% @parametro.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label :genero %>
+    <%= form.text_field :genero %>
+  </div>
+  <div>
+    <%= form.label :grado_de_tumor %>
+    <%= form.text_field :grado_de_tumor %>
+  </div>
+  <!-- Agrega aquí los demás atributos de la misma manera -->
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<%= link_to 'Volver', parametros_path %>

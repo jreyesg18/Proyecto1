@@ -1,0 +1,12 @@
+<h1>Parámetro</h1>
+<p>
+  <strong>Género:</strong>
+  <%= @parametro.genero %>
+</p>
+<p>
+  <strong>Grado de Tumor:</strong>
+  <%= @parametro.grado_de_tumor %>
+</p>
+<!-- Agrega aquí los demás atributos de la misma manera -->
+<%= link_to 'Editar', edit_parametro_path(@parametro) %> |
+<%= link_to 'Volver', parametros_path %>
