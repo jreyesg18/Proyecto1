@@ -1,8 +1,11 @@
-<h1><%= action_name == 'new' ? 'Nuevo' : 'Editar' %> Parámetro</h1>
+<!-- app/views/parametros/new.html.erb -->
+
+<h1>Nuevo Parámetro</h1>
+
 <%= form_with(model: @parametro, local: true) do |form| %>
   <% if @parametro.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@parametro.errors.count, 'error') %> prohibieron que se guardara el parámetro:</h2>
+      <h2><%= pluralize(@parametro.errors.count, "error") %> han ocurrido mientras se procesaba el formulario:</h2>
       <ul>
         <% @parametro.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,17 +13,30 @@
       </ul>
     </div>
   <% end %>
-  <div>
-    <%= form.label :genero %>
-    <%= form.text_field :genero %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre %>
   </div>
-  <div>
-    <%= form.label :grado_de_tumor %>
-    <%= form.text_field :grado_de_tumor %>
+
+  <div class="field">
+    <%= form.label :descripcion %>
+    <%= form.text_area :descripcion %>
   </div>
-  <!-- Agrega aquí los demás atributos de la misma manera -->
-  <div>
-    <%= form.submit %>
+
+  <div class="field">
+    <%= form.label :valor %>
+    <%= form.number_field :valor %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nivel_de_riesgo %>
+    <%= form.select :nivel_de_riesgo, options_for_select(['bajo', 'medio', 'alto'], 'medio') %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Crear Parámetro" %>
   </div>
 <% end %>
+
 <%= link_to 'Volver', parametros_path %>
