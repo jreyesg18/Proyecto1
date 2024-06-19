@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  genero: MyString
+  grado_de_tumor: MyString
+  pleura: MyString
+  tipo_histologico: MyString
+  edad: MyString
+  abdominal: MyString
+  mama: MyString
+  madiastino: MyString
+  cerebro: MyString
+  hueso: MyString
+  peritoneum: MyString
+  piel: MyString
+  nombre_completo: MyString
+  resultado: MyString
+  email: MyString
+
+two:
+  genero: MyString
+  grado_de_tumor: MyString
+  pleura: MyString
+  tipo_histologico: MyString
+  edad: MyString
+  abdominal: MyString
+  mama: MyString
+  madiastino: MyString
+  cerebro: MyString
+  hueso: MyString
+  peritoneum: MyString
+  piel: MyString
+  nombre_completo: MyString
+  resultado: MyString
+  email: MyString
